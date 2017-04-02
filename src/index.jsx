@@ -20,10 +20,14 @@ class App extends Component {
       selectedVideo: null
     };
 
+    this.videoSearch('h3h3productions')
+  }
+
+  videoSearch(term) {
     //Perform a search via the youtube API
     YTSearch({
       key: API_KEY,
-      term: 'h3h3productions'
+      term: term
     }, (videos) => {
       this.setState({
         videos: videos,
@@ -31,10 +35,11 @@ class App extends Component {
       });
     });
   }
+
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           onVideoSelect={selectedVideo => this.setState({ selectedVideo }) }

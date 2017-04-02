@@ -25,7 +25,10 @@ class App extends Component {
       key: API_KEY,
       term: 'h3h3productions'
     }, (videos) => {
-      this.setState({ videos });
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      });
     });
   }
   render() {
@@ -33,7 +36,9 @@ class App extends Component {
       <div>
         <SearchBar />
         <VideoDetail video={this.state.selectedVideo} />
-        <VideoList videos={this.state.videos} />
+        <VideoList
+          onVideoSelect={selectedVideo => this.setState({ selectedVideo }) }
+          videos={this.state.videos} />
       </div>
     );
   }

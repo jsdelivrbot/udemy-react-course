@@ -7,7 +7,11 @@ class BookList extends Component {
   renderList() {
     return this.props.books.map((book) => {
       return (
-        <li className="list-group-item" key={book.title}>{book.title}</li>
+        <li
+          className="list-group-item"
+          onClick={() => this.props.selectBook(book)}
+          key={book.title}
+        >{book.title}</li>
       );
     });
   }

@@ -8,8 +8,6 @@ import promise from 'redux-promise';
 import routes from './routes';
 import reducers from './reducers';
 
-const API_KEY = 'TWlrZWZyaWdnaW53ZWVkZW4';
-
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(

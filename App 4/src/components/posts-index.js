@@ -13,10 +13,4 @@ class PostsIndex extends Component {
   }
 };
 
-function mapDispatchToProps(dispatch) {
-  //This gives us this.props.fetchPosts as a func on the class.
-  //This corresponds to the fetchPosts action in ../actions/index.js
-  return bindActionCreators({ fetchPosts }, dispatch);
-}
-
-export default connect(null, mapDispatchToProps)(PostsIndex);
+export default connect(null, { fetchPosts })(PostsIndex);

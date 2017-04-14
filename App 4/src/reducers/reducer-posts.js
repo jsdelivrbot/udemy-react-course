@@ -1,4 +1,4 @@
-import FETCH_POSTS from '../actions/index.js';
+import { FETCH_POSTS } from '../actions/index';
 const INITIAL_STATE = {
   all: [], //List of blog posts
   post: null //Individual post
